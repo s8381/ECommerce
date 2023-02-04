@@ -2,6 +2,8 @@ package com.luv2code.ecommerce.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -9,11 +11,16 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "product")
-@Data
+@Getter
+@Setter
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
+    private ProductCategory category;
 
     private String sku;
 
@@ -35,7 +42,7 @@ public class Product {
     @Column(name = "data_created")
     @CreationTimestamp
     private Data dataCreated;
-    
+
     @Column(name = "last_updated")
     @UpdateTimestamp
     private Data lastUpdated;
