@@ -1,13 +1,13 @@
 package com.luv2code.ecommerce.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Entity
 @Table(name = "product")
@@ -41,11 +41,11 @@ public class Product {
 
     @Column(name = "data_created")
     @CreationTimestamp
-    private Data dataCreated;
+    private Date dataCreated;
 
     @Column(name = "last_updated")
     @UpdateTimestamp
-    private Data lastUpdated;
+    private Date lastUpdated;
 
 
 }

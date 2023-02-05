@@ -1,6 +1,6 @@
-CREATE USER 'ecommerceapp'@'localhost' IDENTIFIED BY 'ecommerceapp';
+CREATE USER 'root'@'localhost' IDENTIFIED BY 'ecommerceapp';
 
-GRANT ALL PRIVILEGES ON * . * TO 'ecommerceapp'@'localhost';
+GRANT ALL PRIVILEGES ON * . * TO 'root'@'localhost';
 
 #
 # Starting with MySQL 8.0.4, the MySQL team changed the 
